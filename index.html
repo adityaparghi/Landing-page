@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+        integrity="sha512-XcIsjKMcuVe0Ucj/xgIXQnytNwBttJbNjltBV18IOnru2lDPe9KRRyvCXw6Y5H415vbBLRm8+q6fmLUU7DfO6Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>Monclair</title>
+</head>
+
+<body>
+    <div class="swiper">
+        <nav>
+            <a href="#" class="active">Men</a>
+            <a href="#">Women</a>
+            <a href="#">Customize</a>
+            <a href="#" style="margin-left: auto;"><i class="ri-search-line"></i></a>
+            <a href="#">Account</a>
+            <a href="#"><i class="ri-shopping-bag-fill"></i></a>
+        </nav>
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background: linear-gradient(to bottom,#FE783D,#121826);">
+                <h2>POSSESSD</h2>
+                <div class="info">
+                    <p>FALL 2025</p>
+                    <span>@ urban elegance <br> meets innovation</span>
+                    <p>MONCLAIR GENIUS</p>
+                    <span>Bold, modern, <br> and technical</span>
+                </div>
+                <div class="pricing">
+                    <p>Color:</p>
+                    <span>Blood orange</span>
+
+                    <h3>$1549</h3>
+                    <div class="btn-block">
+                        <button class="light-btn">Buy Now</button>
+                        <button class="btn">Add To Cart</button>
+                    </div>
+                </div>
+                <img src="image/1.png" alt="1" class="main-image">
+            </div>
+            <div class="swiper-slide" style="background: linear-gradient(to bottom,#00499D,#121826);">
+                <h2>POSSESSD</h2>
+                <div class="info">
+                    <p>FALL 2025</p>
+                    <span>@ urban elegance <br> meets innovation</span>
+                    <p>MONCLAIR GENIUS</p>
+                    <span>Bold, modern, <br> and technical</span>
+                </div>
+                <div class="pricing">
+                    <p>Color:</p>
+                    <span>Deep Blue</span>
+
+                    <h3>$1549</h3>
+                    <div class="btn-block">
+                        <button class="light-btn">Buy Now</button>
+                        <button class="btn">Add To Cart</button>
+                    </div>
+                </div>
+                <img src="image/2.png" alt="1" class="main-image">
+            </div>
+            <div class="swiper-slide" style="background: linear-gradient(to bottom,#DAB1CB,#511990);">
+                <h2>POSSESSD</h2>
+                <div class="info">
+                    <p>FALL 2025</p>
+                    <span>@ urban elegance <br> meets innovation</span>
+                    <p>MONCLAIR GENIUS</p>
+                    <span>Bold, modern, <br> and technical</span>
+                </div>
+                <div class="pricing">
+                    <p>Color:</p>
+                    <span>Cold Purple</span>
+
+                    <h3>$1549</h3>
+                    <div class="btn-block">
+                        <button class="light-btn">Buy Now</button>
+                        <button class="btn">Add To Cart</button>
+                    </div>
+                </div>
+                <img src="image/3.png" alt="1" class="main-image">
+            </div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-thumbs">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background :#fff;">
+                    <img src="image/1.png" alt="Thumbnail 1">
+                </div>
+                <div class="swiper-slide" style="background :#00499D;">
+                    <img src="image/2.png" alt="Thumbnail 1">
+                </div>
+                <div class="swiper-slide" style="background :#fff;">
+                    <img src="image/3.png" alt="Thumbnail 1">
+                </div>
+            </div>
+        </div>
+        <div class="scroll">Scroll Down <i class="ri-arrow-down-s-line"></i></div>
+        <div class="social"><a href="#">IN</a><a href="#">FB</a><a href="#">TW</a></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+        integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+          var swiper = new Swiper(".swiper", {
+            loop:true,
+            spaceBetween:0,
+            mousewheel:true,
+            speed:1200,
+            effect:"coverflow",
+            direction:"vertical",
+            coverflowEffect:{
+                rotate:50,
+                depth:10,
+                stretch:0,
+                modifier:1,
+                slideShadows:true,
+            },
+            thumbs:{
+                swiper:{
+                    el: '.swiper-thumbs',
+                    slidesPerView:2,
+                    spaceBetween:0,
+                }
+            },
+            on:{
+                slideChangeTransitionStart: function(){
+                    gsap.from(
+                        '.swiper-slide-active h2',
+                        { x:-200 , opacity:0 ,duration:1,delay:0.5}
+                      );
+                    gsap.from(
+                        '.info p , .info span',
+                        {y:10,opacity:0,stagger:0.1,delay:0.5}
+                    );
+                    gsap.from(
+                        '.pricing p , .pricing span,.pricing h3, .btn-block',
+                        {y:10,opacity:0,stagger:0.1,delay:0.5}
+                    );
+                    gsap.from(
+                        '.main-image',
+                        {y:50,opacity:0,duration:1,delay:1}
+                    );
+                    gsap.from(
+                        '.swiper-thumbs',
+                        {y:20,opacity:0,delay:0.5}
+                    );
+
+                }
+            }
+          });
+          gsap.from(
+                        '.swiper-slide-active h2',
+                        { x:-200 , opacity:0 ,duration:1,delay:0.5}
+                      );
+                    gsap.from(
+                        '.info p , .info span',
+                        {y:10,opacity:0,stagger:0.1,delay:0.5}
+                    );
+                    gsap.from(
+                        '.pricing p , .pricing span,.pricing h3, .btn-block',
+                        {y:10,opacity:0,stagger:0.1,delay:0.5}
+                    );
+                    gsap.from(
+                        '.main-image',
+                        {y:100,opacity:0,duration:1,delay:1}
+                    );
+                    gsap.from(
+                        '.swiper-thumbs',
+                        {y:20,opacity:0,delay:0.5}
+                    );
+    </script>
+</body>
+
+</html>
